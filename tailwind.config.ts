@@ -16,6 +16,9 @@ const config: Config = {
           200: '#F5F3EF',
           300: '#E5E2DE',
           400: '#9C958D',
+          500: 'hsl(25, 25%, 50%)',
+          600: 'hsl(25, 30%, 40%)',
+          700: 'hsl(25, 35%, 30%)',
           800: '#2D2A26',
         },
         medical: {
@@ -24,6 +27,7 @@ const config: Config = {
           200: '#A3D3D2',
           300: '#4A8080',
           500: '#2D5A5A',
+          600: 'hsl(195, 60%, 40%)',
           700: '#1F3D3D',
           900: '#0F1E1E',
         },
@@ -48,9 +52,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-mono)', 'monospace'],
+        serif: ['Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
+        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
       },
       backdropBlur: {
         xs: '2px',

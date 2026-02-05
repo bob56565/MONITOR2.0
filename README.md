@@ -9,8 +9,17 @@ Clinical Intelligence Platform - Cascade inference engine for physiological stat
 
 ## 🚀 Quick Start
 
-### Try It Now (One-Click Demo)
-**[→ Launch Live Demo](https://vercel.com/new/clone?repository-url=https://github.com/bob56565/MONITOR2.0)**
+### 🌐 Live Demo on GitHub Pages
+**[→ Try it now!](https://bob56565.github.io/MONITOR2.0/)**
+
+The platform runs directly from GitHub - no deployment needed!
+
+> **Note:** After enabling GitHub Pages (see [GITHUB-PAGES-SETUP.md](./GITHUB-PAGES-SETUP.md)), your site will be live at:
+> `https://bob56565.github.io/MONITOR2.0/`
+
+### Alternative Deployment Options
+- **[→ Deploy to Vercel](https://vercel.com/new/clone?repository-url=https://github.com/bob56565/MONITOR2.0)** (One-click)
+- **[→ Deploy to Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/bob56565/MONITOR2.0)** (One-click)
 
 ### View Repository
 **[→ GitHub Repository](https://github.com/bob56565/MONITOR2.0)**  
