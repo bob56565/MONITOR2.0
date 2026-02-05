@@ -1,4 +1,4 @@
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH?.trim() || ''
+const basePath = (process.env.GITHUB_PAGES && '/MONITOR2.0') || process.env.NEXT_PUBLIC_BASE_PATH?.trim() || ''
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
