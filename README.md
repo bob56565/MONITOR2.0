@@ -2,31 +2,27 @@
 
 Clinical Intelligence Platform - Cascade inference engine for physiological state analysis
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/bob56565/MONITOR2.0)
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/bob56565/MONITOR2.0)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-14.1-black.svg)](https://nextjs.org/)
 
+## 🌐 Live Site
+
+**GitHub Pages:** https://bob56565.github.io/MONITOR2.0/
+
+> **First time setup?** See [SETUP-GITHUB-PAGES.md](./SETUP-GITHUB-PAGES.md) for instructions.
+
 ## 🚀 Quick Start
 
-### 🌐 Live Demo on GitHub Pages
-**[→ Try it now!](https://bob56565.github.io/MONITOR2.0/)**
+### View the Live Site
+Once GitHub Pages is enabled (3-step process), your site will be at:
+```
+https://bob56565.github.io/MONITOR2.0/
+```
 
-The platform runs directly from GitHub - no deployment needed!
-
-> **Note:** After enabling GitHub Pages (see [GITHUB-PAGES-SETUP.md](./GITHUB-PAGES-SETUP.md)), your site will be live at:
-> `https://bob56565.github.io/MONITOR2.0/`
-
-### Alternative Deployment Options
-- **[→ Deploy to Vercel](https://vercel.com/new/clone?repository-url=https://github.com/bob56565/MONITOR2.0)** (One-click)
-- **[→ Deploy to Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/bob56565/MONITOR2.0)** (One-click)
-
-### View Repository
-**[→ GitHub Repository](https://github.com/bob56565/MONITOR2.0)**  
-**[→ Latest Changes](https://github.com/bob56565/MONITOR2.0/commits/copilot/push-remaining-files-to-repo)**
+**Setup Instructions:** [SETUP-GITHUB-PAGES.md](./SETUP-GITHUB-PAGES.md)
 
 ## 📋 Status
-✅ **Production Ready** - v3.8.0 Enterprise Platform Complete
+✅ **Production Ready** - v3.8.0 Enterprise Platform
 
 ## ✨ Features
 
@@ -46,23 +42,6 @@ The platform runs directly from GitHub - no deployment needed!
 - **Charts:** Recharts 2.10
 - **UI Components:** Radix UI (Progress, Tabs)
 - **Icons:** Lucide React
-
-## 🚀 Deployment
-
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions and one-click deployment links.
-
-### Quick Deploy
-```bash
-# Clone and install
-git clone https://github.com/bob56565/MONITOR2.0.git
-cd MONITOR2.0
-npm install
-
-# Run development server
-npm run dev
-```
-
-Visit `http://localhost:3000` to see the platform in action.
 
 ## 📦 Project Structure
 
@@ -84,7 +63,7 @@ MONITOR2.0/
 │   └── monitor.ts            # Worker API type definitions
 └── lib/
     ├── utils.ts              # Utility functions
-    └── mockData.ts           # Sample data for development
+    └── mockData.ts           # Sample data
 ```
 
 ## 🔗 Key Routes
@@ -92,7 +71,26 @@ MONITOR2.0/
 - `/` - Landing page with product overview
 - `/analyze` - Main biomarker analysis interface
 - `/dashboard` - Clinical monitoring dashboard
-- `/api/monitor` - Backend API endpoint
+
+## 🚀 Local Development
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+Visit `http://localhost:3000`
+
+## 📝 Documentation
+
+- **[SETUP-GITHUB-PAGES.md](./SETUP-GITHUB-PAGES.md)** - Simple 3-step setup guide
+- **[REPOSITORY-STATUS.md](./REPOSITORY-STATUS.md)** - Complete file inventory
 
 ## 📝 License
 

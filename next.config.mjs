@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/MONITOR2.0',
   images: {
     unoptimized: true,
   },
