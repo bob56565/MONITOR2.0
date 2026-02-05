@@ -6,7 +6,7 @@ import { GlassCard } from './ui/GlassCard'
 
 interface CascadeNode {
   name: string
-  value: number | string | object
+  value: number | string | { state?: string; [key: string]: any }
   method: string
   confidence: {
     score: number
