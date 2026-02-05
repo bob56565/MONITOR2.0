@@ -2,62 +2,42 @@
 
 ## ✅ What I Fixed
 
-### Problem 1: 404 Error - FIXED ✓
-**Root Cause:** The `basePath: '/MONITOR2.0'` in the Next.js config was causing all pages to look for files in the wrong location.
+### Problem 1: GitHub Pages exports - FIXED ✓
+**Root Cause:** Static export needed a base path during the GitHub Pages build and the Analyze route depended on an API path unavailable on Pages.
 
-**Solution:** Removed the basePath completely. Now your site will work correctly at:
-```
-https://bob56565.github.io/MONITOR2.0/
-```
+**Solution:** Added a Pages-safe build (base path injected via workflow), removed the duplicate workflow, and added bundled demo results so the Analyze page works without a backend.
 
 ### Problem 2: Multiple Branches - ORGANIZED ✓
 **What I Did:**
-- Created a clean `main` branch with all your code
-- All files, folders, and code are properly organized
-- Everything is committed and ready to push
+- Kept `main` as the single deploy branch
+- Removed the redundant Pages workflow
+- Added base-path configuration to the remaining workflow
 
 ### Problem 3: Complicated Setup - SIMPLIFIED ✓
-- Created simple 3-step guide (SETUP-GITHUB-PAGES.md)
-- Removed confusing deployment options
+- Updated the GitHub Pages guide to the single workflow
+- Added demo-mode notes so anyone can test without a worker
 - One clean path: GitHub Pages from main branch
 
 ## 🚀 What You Need to Do Now
 
-### Step 1: Push the Main Branch
-Since I don't have push permissions, **you** need to push the main branch:
-
-```bash
-# Go to your repository folder
-cd MONITOR2.0
-
-# Make sure you're on main branch
-git checkout main
-
-# Push to GitHub
-git push -u origin main
-```
-
-### Step 2: Set Main as Default Branch
-1. Go to: https://github.com/bob56565/MONITOR2.0/settings/branches
-2. Under "Default branch", click the pencil icon
-3. Change from `copilot/push-remaining-files-to-repo` to `main`
-4. Click "Update" and confirm
-
-### Step 3: Enable GitHub Pages
+### Step 1: Confirm Pages settings
 1. Go to: https://github.com/bob56565/MONITOR2.0/settings/pages
-2. Under "Build and deployment"
-   - **Source**: Select `GitHub Actions`
-3. Click **Save**
+2. Under "Build and deployment" set **Source** to **GitHub Actions**
+3. Save if needed
 
-### Step 4: Wait for Deployment
-1. Go to Actions tab: https://github.com/bob56565/MONITOR2.0/actions
-2. Watch for "Deploy to GitHub Pages" workflow
-3. Wait 2-3 minutes for green checkmark ✅
+### Step 2: Trigger the workflow
+1. Push to `main` (or click **Run workflow** on the Actions tab)
+2. Workflow name: "Deploy Next.js site to Pages"
+3. Wait ~2-3 minutes for the green checkmark ✅
 
-### Step 5: Visit Your Site!
+### Step 3: Visit your site
 ```
 https://bob56565.github.io/MONITOR2.0/
 ```
+
+### Step 4: Optional live backend
+- The Analyze page already works in demo mode on Pages.
+- To use your Cloudflare Worker, add `NEXT_PUBLIC_MONITOR_WORKER_URL` as a repository secret and redeploy.
 
 ## 🧹 Optional: Clean Up Old Branch
 
@@ -73,8 +53,8 @@ git push origin --delete copilot/push-remaining-files-to-repo
 
 ## ✅ Verification Checklist
 
-- [ ] Pushed main branch to GitHub
-- [ ] Set main as default branch
+- [ ] Pages source set to GitHub Actions
+- [ ] Default branch set to `main`
 - [ ] Enabled GitHub Pages (Source: GitHub Actions)
 - [ ] Workflow completed successfully (green checkmark in Actions)
 - [ ] Site loads at https://bob56565.github.io/MONITOR2.0/

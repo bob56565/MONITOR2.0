@@ -1,18 +1,18 @@
 # 📋 Repository Status Report
 
 **Generated:** February 5, 2026  
-**Branch:** copilot/push-remaining-files-to-repo  
-**Status:** ✅ **FULLY SYNCED**
+**Branch:** main  
+**Status:** ⚠️ Working tree has local changes (see `git status`)
 
 ---
 
 ## ✅ Git Status
 
-- **Working Tree:** Clean
-- **Uncommitted Changes:** None
-- **Unpushed Commits:** None
-- **Sync Status:** Up to date with origin
-- **Total Files Tracked:** 39 files
+- **Working Tree:** Changes present (untracked package-lock and updates in progress)
+- **Uncommitted Changes:** Yes
+- **Unpushed Commits:** Pending
+- **Sync Status:** Will deploy from `main` after push
+- **Total Files Tracked:** Updated after next commit
 
 ---
 
@@ -38,7 +38,7 @@
 ### Deployment Configurations (3)
 - `vercel.json` - Vercel deployment config
 - `netlify.toml` - Netlify deployment config
-- `.github/workflows/deploy.yml` - GitHub Actions workflow
+- `.github/workflows/nextjs.yml` - GitHub Pages deployment
 
 ### Application Routes (7)
 - `app/layout.tsx` - Root layout
@@ -68,10 +68,11 @@
 - `components/charts/VitalChart.tsx` - Vital signs chart
 - `components/monitoring/VitalCard.tsx` - Vital signs card
 
-### Library Files (3)
+### Library Files (4)
 - `lib/utils.ts` - Utility functions
 - `lib/types.ts` - Type definitions
 - `lib/mockData.ts` - Mock data for development
+- `lib/demoResponse.ts` - Bundled demo response for Pages
 
 ### Type Definitions (1)
 - `types/monitor.ts` - Complete Worker API type definitions
@@ -84,8 +85,8 @@
 ## 🌐 Remote Repository
 
 **Repository:** https://github.com/bob56565/MONITOR2.0  
-**Branch:** https://github.com/bob56565/MONITOR2.0/tree/copilot/push-remaining-files-to-repo  
-**Commits:** https://github.com/bob56565/MONITOR2.0/commits/copilot/push-remaining-files-to-repo
+**Branch:** https://github.com/bob56565/MONITOR2.0/tree/main  
+**Commits:** https://github.com/bob56565/MONITOR2.0/commits/main
 
 ---
 

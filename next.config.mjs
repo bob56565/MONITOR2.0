@@ -1,13 +1,18 @@
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH?.trim() || ''
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
   },
-  experimental: {
-    optimizePackageImports: ['lucide-react', 'framer-motion', 'recharts'],
-  },
-  // Disable server-side features for static export
+  // Keep assets working on GitHub Pages while staying root-based in dev
+  ...(basePath
+    ? {
+        basePath,
+        assetPrefix: `${basePath}/`,
+      }
+    : {}),
   trailingSlash: true,
 }
 

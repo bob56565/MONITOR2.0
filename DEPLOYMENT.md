@@ -5,9 +5,9 @@
 ### GitHub Repository
 **Main Repository:** https://github.com/bob56565/MONITOR2.0
 
-**Current Branch:** https://github.com/bob56565/MONITOR2.0/tree/copilot/push-remaining-files-to-repo
+**Current Branch:** https://github.com/bob56565/MONITOR2.0/tree/main
 
-**View All Changes:** https://github.com/bob56565/MONITOR2.0/commits/copilot/push-remaining-files-to-repo
+**View All Changes:** https://github.com/bob56565/MONITOR2.0/commits/main
 
 ## 🌐 One-Click Deployment Links
 

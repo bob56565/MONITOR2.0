@@ -18,7 +18,7 @@ https://bob56565.github.io/MONITOR2.0/
 
 ### Step 2: Verify the Workflow
 1. Go to the **Actions** tab: https://github.com/bob56565/MONITOR2.0/actions
-2. You should see "Deploy to GitHub Pages" workflow running
+2. You should see the "Deploy Next.js site to Pages" workflow running
 3. Wait 2-3 minutes for it to complete (green checkmark ✅)
 
 ### Step 3: Visit Your Site
@@ -69,6 +69,10 @@ Once deployed, you can access:
 ✅ **Fast** - CDN-backed, HTTPS enabled
 ✅ **Simple** - Just push code, it deploys automatically
 ✅ **Clean** - One main branch, organized structure
+
+### Notes for live inference
+- The live demo on Pages ships with built-in sample results so it works without a backend.
+- To connect your own Cloudflare Worker, set `NEXT_PUBLIC_MONITOR_WORKER_URL` as an Actions/Pages secret or in `.env.local` before building.
 
 ## 🔄 How Updates Work
 

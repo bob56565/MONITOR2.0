@@ -9,6 +9,13 @@ Clinical Intelligence Platform - Cascade inference engine for physiological stat
 
 **GitHub Pages:** https://bob56565.github.io/MONITOR2.0/
 
+Deployment runs automatically from `main` via [.github/workflows/nextjs.yml](.github/workflows/nextjs.yml).
+
+### Demo Mode (no backend needed)
+- The Analyze flow ships with bundled demo results so anyone can try the app on GitHub Pages without credentials.
+- To use live inference, set `NEXT_PUBLIC_MONITOR_WORKER_URL` in `.env.local` (and as a Pages/Actions secret) pointing at your Cloudflare Worker.
+- To mirror the Pages build locally, run `NEXT_PUBLIC_BASE_PATH=/MONITOR2.0 npm run build`.
+
 > **First time setup?** See [SETUP-GITHUB-PAGES.md](./SETUP-GITHUB-PAGES.md) for instructions.
 
 ## 🚀 Quick Start

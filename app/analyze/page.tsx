@@ -7,12 +7,15 @@ import { ResultsDashboard } from '@/components/ResultsDashboard'
 import { motion } from 'framer-motion'
 import { Activity, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
+import { demoMonitorResponse } from '@/lib/demoResponse'
 
 export default function AnalyzePage() {
   const [biomarkers, setBiomarkers] = useState<BiomarkerInputType[]>([])
   const [isAnalyzing, setIsAnalyzing] = useState(false)
   const [results, setResults] = useState<MonitorResponse | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [usedDemoData, setUsedDemoData] = useState(false)
+  const [demoNotice, setDemoNotice] = useState<string | null>(null)
 
   const handleAnalyze = async () => {
     if (biomarkers.length === 0) {
@@ -22,9 +25,21 @@ export default function AnalyzePage() {
 
     setIsAnalyzing(true)
     setError(null)
+    setDemoNotice(null)
+    setUsedDemoData(false)
 
     try {
-      const response = await fetch('/api/monitor', {
+      const workerUrl = process.env.NEXT_PUBLIC_MONITOR_WORKER_URL?.trim()
+      const targetUrl = workerUrl ? `${workerUrl.replace(/\/$/, '')}/analyze?mode=a2` : null
+
+      if (!targetUrl) {
+        setResults(demoMonitorResponse)
+        setUsedDemoData(true)
+        setDemoNotice('Running in demo mode. Set NEXT_PUBLIC_MONITOR_WORKER_URL to use your live worker.')
+        return
+      }
+
+      const response = await fetch(targetUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -41,6 +56,9 @@ export default function AnalyzePage() {
       const data = await response.json()
       setResults(data)
     } catch (err) {
+      setResults(demoMonitorResponse)
+      setUsedDemoData(true)
+      setDemoNotice('Live analysis failed, showing demo results instead. Check NEXT_PUBLIC_MONITOR_WORKER_URL if you have a worker available.')
       setError(err instanceof Error ? err.message : 'An error occurred')
     } finally {
       setIsAnalyzing(false)
@@ -51,6 +69,8 @@ export default function AnalyzePage() {
     setResults(null)
     setBiomarkers([])
     setError(null)
+    setUsedDemoData(false)
+    setDemoNotice(null)
   }
 
   return (
@@ -112,6 +132,12 @@ export default function AnalyzePage() {
           </div>
         ) : (
           <div className="space-y-6">
+            {usedDemoData && demoNotice && (
+              <div className="p-4 bg-blue-50 border border-blue-200 rounded-xl text-blue-900">
+                {demoNotice}
+              </div>
+            )}
+
             <ResultsDashboard response={results} />
 
             <div className="flex justify-center">

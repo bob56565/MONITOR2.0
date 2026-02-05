@@ -15,10 +15,7 @@ Your MONITOR v3.8.0 platform is now configured to deploy directly to GitHub Page
 
 ### Step 2: Trigger Deployment
 
-The deployment will automatically start when you:
-- Push to the `copilot/push-remaining-files-to-repo` branch (already configured)
-- Push to the `main` branch
-- Or manually trigger from the Actions tab
+The deployment automatically starts when you push to `main` or manually trigger it from the Actions tab.
 
 ### Step 3: Access Your Site
 
@@ -37,10 +34,9 @@ https://bob56565.github.io/MONITOR2.0/
 ## ✅ What's Configured
 
 - ✅ Static export enabled in `next.config.mjs`
-- ✅ GitHub Actions workflow created (`.github/workflows/deploy.yml`)
-- ✅ Google Fonts issue resolved (using system fonts)
+- ✅ GitHub Actions workflow created (`.github/workflows/nextjs.yml`)
 - ✅ Image optimization disabled for static export
-- ✅ Proper base path configured (`/MONITOR2.0`)
+- ✅ Base path injected during the Pages build
 
 ## 🎯 Routes Available
 
@@ -81,6 +77,12 @@ No deployment accounts needed - it runs directly from GitHub! 🎉
 **If you get 404 errors:**
 - Make sure you're using the trailing slash: `/MONITOR2.0/`
 - The site may take a few minutes to propagate
+
+## 🔌 Using your own worker
+
+- The Analyze page includes built-in demo results so the Pages build works without a backend.
+- To call your Cloudflare Worker instead, set `NEXT_PUBLIC_MONITOR_WORKER_URL` as an Actions/Pages secret or in `.env.local` before building locally.
+- To mirror the Pages build locally, run `NEXT_PUBLIC_BASE_PATH=/MONITOR2.0 npm run build`.
 
 ## 🔄 Updates
 
